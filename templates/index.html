@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home-CollegeRepository</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<style>
+    .secondnav {
+        display: none;
+    }
+
+    .navbar {
+        background-color: #505050;
+        height: 100%;
+        width: 15%;
+        position: fixed;
+        top: 30%;
+        left: 0;
+        padding-top: 3%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    .navbar a {
+        color: white;
+        text-align: center;
+        padding: 16px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+    }
+
+    .image {
+
+        background-color: #505050;
+        height: 30%;
+        width: 15%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        padding-top: 3%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .navbar a:hover {
+        background-color: #625a5a;
+        color: black;
+        width: 100%;
+    }
+
+    .active {
+        border-bottom: 3px solid blue;
+
+    }
+
+    .remaining-body {
+        margin-left: 15%;
+    }
+
+    .heading {
+        color: white;
+        background: linear-gradient(to right, rgb(4, 4, 71), rgb(31, 125, 138));
+        padding-top: 3%;
+        padding-bottom: 2%;
+
+    }
+
+    .typing-cursor {
+        font-size: 48px;
+        opacity: 1;
+        -webkit-animation: typing 2s steps(30, end), blink-caret .75s step-end infinite;
+        animation: typing 2s steps(30, end), blink-caret .75s step-end infinite;
+    }
+
+    @keyframes typing {
+        from {
+            width: 0
+        }
+
+        to {
+            width: 100%
+        }
+    }
+
+    @keyframes blink-caret {
+
+        from,
+        to {
+            border-color: transparent
+        }
+
+        50% {
+            border-color: orange;
+        }
+    }
+
+    #cards {
+        padding-left: 15%;
+    }
+
+    #footer {
+        background: linear-gradient(to right, rgb(31, 125, 138), rgb(4, 4, 71));
+    }
+
+    .navicon {
+        display: none;
+    }
+
+    @media only screen and (max-width: 850px) {
+        .secondnav {
+            display: flex;
+        }
+
+        .secondnav nav {
+            width: 100%;
+            display: flex;
+            background-color: #505050;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .secondnav nav a img {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            width: 65px;
+            cursor: pointer;
+            border-radius: 15px;
+            margin-left: 10px;
+            margin-top: 0px;
+        }
+
+        .secondnav nav .navigation {
+            display: flex;
+        }
+
+        .secondnav nav .navigation ul {
+            display: inline-flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding-top: 10px;
+            padding-right: 20px;
+            margin-top: 0px;
+            padding-left: 0;
+            margin-left: 0;
+        }
+
+        .secondnav nav .navigation ul li {
+            list-style: none;
+            margin-left: 20px;
+        }
+
+        .secondnav nav .navigation ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        nav .navigation ol .logo2 a:hover {
+            color: black;
+        }
+
+        .active {
+        border-bottom: 3px solid blue;
+
+    }
+
+        .vnav {
+            display: none;
+        }
+
+        .remaining-body {
+            margin-left: 0;
+        }
+
+        .heading {
+            display: flex;
+            flex-direction: row;
+        }
+
+        #heading {
+            margin-left: 10%;
+        } 
+    }
+    {% comment %} @media only screen and (max-width: 397px){
+        #heading{
+            margin-left: 0;
+        }
+    } {% endcomment %}
+</style> 
+
+<body>
+    <div class="secondnav">
+        <nav>
+            <a href="">
+                <img src="static/crlogo5.jpg" alt="">
+            </a>
+            <div class="navigation">
+                <ul>
+                    <li><a href="/" class="active">Home</a></li>
+                    <li><a href="/resources">Resources</a></li>
+                    <li><a href="/add">Add</a></li>
+                    <li><a href="/contact">Reach Out</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <div class="vnav">
+        <div class="image">
+            <img class="image" src="static/crlogo5.jpg" alt="">
+        </div>
+        <div class="navbar">
+            <a href="/" class="active">Home</a>
+            <a href="/resources">Resources</a>
+            <a href="/add">Add</a>
+            <a href="/contact">Reach Out</a>
+        </div>
+    </div>
+
+    <div class="remaining-body">
+
+        <div class="heading text-center">
+            <h1 id="heading" class="text-center">Welcome To CollegeRepository
+                <span class="typing-cursor"></span>
+            </h1>
+        </div>
+
+        <div class="container text-center pt-4 pb-2">
+            <p id="intro">CollegeRepository, the ultimate destination for all your college
+                exam needs. Our extensive database
+                contains a wealth of old question papers for all branches of college, covering a variety of
+                subjects. If you're a student looking for extra practice materials or last night study before exams,
+                CollegeRepository has you covered.
+            </p>
+        </div>
+
+        <div class="container my-3" id="cards">
+            <div class="row">
+                <div class="card mx-2 px-0 my-2" style="width: 17rem;">
+                    <img src="static/crlogo5.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">What we are?</h5>
+                        <p class="card-text text-center">A bunch of innovative, enthusisatic and motivated college
+                            students,
+                            Who work together on CollegeRepository website. We will add new exciting features
+                            that will improve your user experience. Until then keep using and contributing.</p>
+                    </div>
+                </div>
+                <div class="card mx-2 px-0 my-2" style="width: 17rem;">
+                    <img src="static/crlogo9.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title text-center pt-2">What have we been occupied with?</h5>
+                        <p class="card-text text-center">CollegeSpace has been the one-stop solution for students the
+                            night before exam. It has a vast array of old question papers and We are working continously
+                            so that we can provide maximum material to the students.</p>
+                    </div>
+                </div>
+                <div class="card mx-2 px-0 my-2" style="width: 17rem;">
+                    <img src="static/crlogo5.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Why should you visit CR?</h5>
+                        <p class="card-text text-center">Students who are preparing for exams may find it helpful to
+                            have access to past papers to practice with and get a sense of the types of questions that
+                            have been asked in the past and they can become familiar with the structure and format of
+                            the exam.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="text-center text-light py-2 relative-bottom" id="footer">Copyright CollegeRepository | All
+            rights
+            reserved &copy; 2022
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
+        </script>
+
+    <script>
+        var heading = document.getElementById("heading");
+        var cursor = heading.getElementsByClassName("typing-cursor")[0];
+        var numChars = heading.textContent.length;
+        var cursorPos = 0;
+        var headingText = heading.textContent.substring(0, numChars - 1);
+        var delay = 100;
+        var interval = setInterval(function () {
+            if (cursorPos === numChars - 1) {
+                clearInterval(interval);
+                cursor.remove();
+                return;
+            }
+            heading.innerHTML = headingText.substring(0, ++cursorPos) + cursor.outerHTML;
+        }, delay);
+    </script>
+</body>
+
+</html>

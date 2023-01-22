@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Contact-CollegeRepository</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+<style>
+    .secondnav {
+        display: none;
+    }
+    .navbar {
+        background-color: #505050;
+        height: 100%;
+        width: 15%;
+        position: fixed;
+        top: 30%;
+        left: 0;
+        padding-top: 3%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    .navbar a {
+        color: white;
+        text-align: center;
+        padding: 16px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+    }
+
+    .image {
+
+        background-color: #505050;
+        height: 30%;
+        width: 15%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        padding-top: 3%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .navbar a:hover {
+        background-color: #625a5a;
+        color: black;
+        width: 100%;
+    }
+
+    .active{
+        border-bottom: 3px solid blue;
+
+    }
+
+    .remaining-body {
+        margin-left: 15%;
+    }
+
+    .heading {
+        color: white;
+        background: linear-gradient(to right, rgb(4, 4, 71), rgb(31, 125, 138));
+        padding-top: 3%;
+        padding-bottom: 2%;
+
+    }
+
+    .container{
+        min-height: 77vh;
+    }
+
+    .container h2{
+        color: #505050;
+    }
+
+    label[for="required"]::after {
+        content: "*";
+        color: red;
+    }
+
+    .btn{
+        color: white;
+        background: linear-gradient(to right, rgb(20, 20, 148), rgb(31, 125, 138));
+    }
+
+    .btn:hover{
+        color: white;
+        background: linear-gradient(to right, rgb(31, 125, 138),rgb(20, 20, 148));
+    }
+
+    #footer {
+        background: linear-gradient(to right, rgb(31, 125, 138),rgb(4, 4, 71));
+    }
+    @media only screen and (max-width: 850px) {
+        .secondnav {
+            display: flex;
+        }
+
+        .secondnav nav {
+            width: 100%;
+            display: flex;
+            background-color: #505050;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .secondnav nav a img {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            width: 65px;
+            cursor: pointer;
+            border-radius: 15px;
+            margin-left: 10px;
+            margin-top: 0px;
+        }
+
+        .secondnav nav .navigation {
+            display: flex;
+        }
+
+        .secondnav nav .navigation ul {
+            display: inline-flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding-top: 10px;
+            padding-right: 20px;
+            margin-top: 0px;
+            padding-left: 0;
+            margin-left: 0;
+        }
+
+        .secondnav nav .navigation ul li {
+            list-style: none;
+            margin-left: 20px;
+        }
+
+        .secondnav nav .navigation ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        nav .navigation ol .logo2 a:hover {
+            color: black;
+        }
+
+        .active {
+        border-bottom: 3px solid blue;
+
+    }
+
+        .vnav {
+            display: none;
+        }
+
+        .remaining-body {
+            margin-left: 0;
+        }
+
+        .heading {
+            display: flex;
+            flex-direction: row;
+        }
+
+        #heading {
+            margin-left: 18%;
+        }
+    }
+</style>
+
+<body>
+    <div class="secondnav">
+        <nav>
+            <a href="">
+                <img src="static/crlogo5.jpg" alt="">
+            </a>
+            <div class="navigation">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/resources">Resources</a></li>
+                    <li><a href="/add">Add</a></li>
+                    <li><a class="active" href="#">Reach Out</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <div class="vnav">
+        <div class="image">
+            <img class="image" src="static/crlogo5.jpg" alt="">
+        </div>
+        <div class="navbar">
+            <a href="/">Home</a>
+            <a href="/resources">Resources</a>
+            <a href="/add">Add</a>
+            <a href="#" class="active">Reach Out</a>
+        </div>
+    </div>
+
+    <div class="remaining-body">
+
+        <div class="heading text-center">
+            <h1 id="heading">CollegeRepository
+                <span class="typing-cursor"></span>
+            </h1>
+        </div>
+
+        <div class="container">
+            <h2 class="my-4 px-5">Get In Touch</h2>
+            <form action="/contact" method="POST" class="px-5">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label for="exampleInputName" class="form-label">Name</label>
+                    <input type="name" name="name" class="form-control" placeholder="Enter your name" id="exampleInputEmail1" aria-describedby="emailHelp" style="width: 85%; outline-color: #505050; outline-style: solid; outline-width: 1px">
+                  </div>
+                <div class="mb-3">
+                  <label for="required" class="form-label">Email address</label>
+                  <input type="email" name="email" class="form-control" placeholder="example@student.nitw.ac.in" id="email" aria-describedby="emailHelp" style="width: 85%; outline-color: #505050; outline-style: solid; outline-width: 1px" required pattern="[a-z0-9._%+-]+@student\.nitw\.ac\.in$">
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Phone</label>
+                  <input type="tel" placeholder="Enter your phone number" class="form-control" id="phone" name="phone" style="width: 85%; outline-color: #505050; outline-style: solid; outline-width: 1px">
+                </div>
+                <div class="mb-3">
+                    <label for="required">How may we help you?</label>
+                    <textarea id="desc" name="desc" class="form-control" placeholder="Write your concern" rows="3" style="width: 85%; outline-color: #505050; outline-style: solid; outline-width: 1px" required></textarea>
+                </div>
+                <button type="submit" class="btn" onclick="return validateEmail()">Submit</button>
+            </form>
+        </div>
+
+        <footer class="text-center text-light py-2 relative-bottom" id="footer">Copyright CollegeRepository | All
+            rights
+            reserved &copy; 2022
+        </footer>
+    </div>
+
+    <script>
+        function validateEmail() {
+          var email = document.getElementById("email").value;
+          var emailRegex = /^[a-z0-9._%+-]+@student\.nitw\.ac\.in$/;
+          if (emailRegex.test(email)) {
+            return true;
+          } else {
+            alert("Use Institute Mail Id");
+            return false;
+          }
+        }
+      </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
+     </script>
+</body>
+</html>
