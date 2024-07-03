@@ -7,6 +7,7 @@
     <title>Add-CollegeRepository</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <style>
     .secondnav {
@@ -223,6 +224,19 @@
             <h2 class="my-4 px-5">Add Question Papers</h2>
             <form action="/add" method="POST" id="form" enctype="multipart/form-data" class="px-5">
                 {% csrf_token %}
+                {% if messages %}
+                    {% for message in messages %}
+                        {% if message.tags == 'error' %}
+                            <div class="alert alert-danger" role="alert">
+                                {{ message }}
+                            </div>
+                        {% elif message.tags == 'success' %}
+                            <div class="alert alert-success" role="alert">
+                                {{ message }}
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
                 <div class="mb-3">
                     <label for="required" class="form-label">Email address</label>
                     <input type="email" name="email" class="form-control" placeholder="example@student.nitw.ac.in" id="email"
@@ -279,7 +293,7 @@
                     <label for="required" class="mb-2">Upload Question Paper</label><br>
                     <input type="file" id="document" name="document" required>
                     <div id="subject" class="form-text">Please make sure that document name is in "subject
-                        name-sem.docs" this format</div>
+                        name-sem.jpg/jpeg/pdf/png" this format</div>
                 </div>
                 <button type="submit" id="btn" class="btn mb-3" onclick="return validateEmail()">Submit</button>
             </form>
@@ -287,7 +301,7 @@
 
         <footer class="text-center text-light py-2 relative-bottom" id="footer">Copyright CollegeRepository | All
             rights
-            reserved &copy; 2022
+            reserved &copy; <script>document.write(new Date().getFullYear())</script>
         </footer>
     </div>
 
