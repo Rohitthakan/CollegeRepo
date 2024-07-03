@@ -40,6 +40,7 @@ class Question(models.Model):
     subject = models.CharField(max_length=200)
     document = models.FileField(upload_to='Question-Papers')
     time = models.DateTimeField(auto_now_add=True)
+    token = models.BigAutoField(primary_key=True)
 
     def __str__(self):
         return self.subject
@@ -54,3 +55,15 @@ class Contact(models.Model):
 
     def __str__(self):
         return self.name + ' => ' + self.email
+
+
+class ConfirmationData(models.Model):
+    token = models.CharField(max_length=255, unique=True)
+    branch = models.CharField(max_length=100)
+    semester = models.CharField(max_length=100)
+    subject = models.CharField(max_length=255)
+    exam_type = models.CharField(max_length=100)
+    document = models.FileField(upload_to='Question-Papers')
+    user_email = models.EmailField()
+    def __str__(self):
+        return self.branch + "->" + self.subject
