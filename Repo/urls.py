@@ -9,6 +9,7 @@ urlpatterns = [
     path('contact', views.contact, name='contact'),
     path('add', views.add, name='add'),
     path('resources', views.resources, name='resources'),
+    path('confirm_upload/<str:token>/', views.confirm_upload, name='confirm_upload')
 ]
 
 if settings.DEBUG:
