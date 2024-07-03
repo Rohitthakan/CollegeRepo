@@ -221,6 +221,19 @@
             <h2 class="my-4 px-5">Get In Touch</h2>
             <form action="/contact" method="POST" class="px-5">
                 {% csrf_token %}
+                {% if messages %}
+                    {% for message in messages %}
+                        {% if message.tags == 'error' %}
+                            <div class="alert alert-danger" role="alert">
+                                {{ message }}
+                            </div>
+                        {% elif message.tags == 'success' %}
+                            <div class="alert alert-success" role="alert">
+                                {{ message }}
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
                 <div class="mb-3">
                     <label for="exampleInputName" class="form-label">Name</label>
                     <input type="name" name="name" class="form-control" placeholder="Enter your name" id="exampleInputEmail1" aria-describedby="emailHelp" style="width: 85%; outline-color: #505050; outline-style: solid; outline-width: 1px">
@@ -243,7 +256,7 @@
 
         <footer class="text-center text-light py-2 relative-bottom" id="footer">Copyright CollegeRepository | All
             rights
-            reserved &copy; 2022
+            reserved &copy; <script>document.write(new Date().getFullYear())</script>
         </footer>
     </div>
 
